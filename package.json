@@ -49,7 +49,8 @@
     }
   },
   "dependencies": {
-    "sqlite3": "^3.1.8"
+    "sqlite3": "^4.0.0",
+    "snyk": "^1.88.1"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -70,6 +71,9 @@
   "scripts": {
     "lint": "eslint src test tools",
     "test": "node tools/build && mocha",
-    "build": "node tools/build"
-  }
+    "build": "node tools/build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
